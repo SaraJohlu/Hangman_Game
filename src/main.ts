@@ -43,12 +43,38 @@ function guess_letter(game: hangman_game, letter: Letter): hangman_game {
   const fail = game.guessed_letters.filter(l => !game.word.includes(l)).length; // Count the number of failed guesses. 
   /*If the guessed letter is not in the word it will increment the fail count by filter through the array for the set word*/
 
+
+  /* This if state checks if the player has either won or lost by comparing the number guesses to fail guesses. So if fail is
+  equal or bigger than the max_fails it will turn the game state to Lost. */
   if (fail >= game.max_fails) {
     game.state = gameState.Lost;
   }
+
+  /*What split does is to split the guessed word into an array for letters to see if the function will return it true or false.
+  every in this case is an array method that checks if every element (letters) passes the the test of the implementation in the function
+  l as Letter is telling Typescript that the  l is a Letter type. */
+
   else if (game.word.split("").every(l => game.guessed_letters.includes(l as Letter))) {
     game.state = gameState.Won;
   }
   return game;
-}
+};
+
+
+/* This function will show the current state of the game. Example of this can be Like:
+
+const game = start_hangman("Vinylplatta") --> This sets the winning word to Vinylplatta.;
+console.log(display_current_game(game)) 
+will show in console: 
+Word: " "
+guess_letter:
+Status:0
+*/
+
+function display_current_game (game: hangman_game): string {
+  const display_word = game.word.split("").map(l => (game.guessed_letters.includes(l as Letter)) ? l: " ").join("");
+  return ` Word: ${display_word}
+  guess_letter: ${game.guessed_letters.join(", ")}
+  Status: ${game.state}` 
+};
 
