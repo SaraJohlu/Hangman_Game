@@ -2,9 +2,9 @@ import './style.css'
 
 // Creating the different states in the game using enum.
 enum gameState {
-  Playing,
-  Won,
-  Lost,
+  Playing = "PLAYING",
+  Won = "WON",
+  Lost = "LOST",
 }
 
 // using Literal types for all the letters that can be used in the game.
@@ -15,7 +15,6 @@ type Letter =
   | "v" | "w" | "x" | "y" | "z";
 
 // Interface for the game 
-
 interface hangman_game {
   word: String,
   guessed_letters: Letter[],
@@ -198,25 +197,21 @@ window.addEventListener("keydown", (e) => {
   render();
 });
 
-// render();
-//     max_fails: 6,
-//     state: gameState.Playing
-//  };
-// };
+// For testing purpose only
+// Display current state in console, for testing and to see that it works like it should. 
 
+function display_current_game (game: hangman_game): string {
+  const display_word = game.word.split(" ").map(l => (game.guessed_letters.includes(l as Letter)) ? l: " ").join("");
+  return ` Word: ${display_word}
+  guess_letter: ${game.guessed_letters.join(", ")}
+  Status: ${game.state}` 
+};
 
+let hangmanGame = start_hangman("Test");
+console.log(display_current_game(hangmanGame));
 
-// /* This function will show the current state of the game. 
-
-// const game = start_hangman("Vinylplatta") --> This sets the winning word to Vinylplatta.;
-// */
-
-// function display_current_game (game: hangman_game): string {
-//   const display_word = game.word.split(" ").map(l => (game.guessed_letters.includes(l as Letter)) ? l: " ").join("");
-//   return ` Word: ${display_word}
-//   guess_letter: ${game.guessed_letters.join(", ")}
-//   Status: ${game.state}` 
-// };
+game = guess_letter(hangmanGame, " ");
+console.log(display_current_game(hangmanGame), hangmanGame.guessed_letters);
 
 
 render();
