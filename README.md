@@ -22,8 +22,11 @@ In our case as we build a hangman game, we can with types decide which letters t
 exampel for this on our code is:
 
 `type Letter =
-  | "a" | "b" | "c" | "d" | "e" | "f" | "g"
-  | "h" | "i" | "j" | "k" | "l" | "m" | "n"
-  | "o" | "p" | "q" | "r" | "s" | "t" | "u"
+  | "a" | "b" | "c" | "d" | "e" | "f" | "g"  
+
+  | "h" | "i" | "j" | "k" | "l" | "m" | "n"  
+
+  | "o" | "p" | "q" | "r" | "s" | "t" | "u"  
+  
   | "v" | "w" | "x" | "y" | "z";`
 
