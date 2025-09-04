@@ -61,20 +61,17 @@ function guess_letter(game: hangman_game, letter: Letter): hangman_game {
 };
 
 
-/* This function will show the current state of the game. Example of this can be Like:
+/* This function will show the current state of the game. 
 
 const game = start_hangman("Vinylplatta") --> This sets the winning word to Vinylplatta.;
-console.log(display_current_game(game)) 
-will show in console: 
-Word: " "
-guess_letter:
-Status:0
 */
 
 function display_current_game (game: hangman_game): string {
-  const display_word = game.word.split("").map(l => (game.guessed_letters.includes(l as Letter)) ? l: " ").join("");
+  const display_word = game.word.split(" ").map(l => (game.guessed_letters.includes(l as Letter)) ? l: " ").join("");
   return ` Word: ${display_word}
   guess_letter: ${game.guessed_letters.join(", ")}
   Status: ${game.state}` 
 };
 
+
+console.log(`${start_hangman}`)
