@@ -123,7 +123,7 @@ button:disabled{
 
 /* Primär stil (kan sättas manuellt via class="primary" om du vill) */
 button.primary{
-  border-color: color-mix(in srgb, var(--primary) 40%, black 0%);
+  /* border-color: color-mix(in srgb, var(--primary) 40%, black 0%); */
   background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 18%, white 82%), #fff);
 }
 
@@ -142,8 +142,8 @@ button:focus-visible, input#letter:focus-visible{
   border:1px solid var(--border);
   color:var(--muted);
 }
-.badge.good{ color:var(--good); border-color: color-mix(in srgb, var(--good) 35%, var(--border)); }
-.badge.bad{ color:var(--bad); border-color: color-mix(in srgb, var(--bad) 35%, var(--border)); }
+/* .badge.good{ color:var(--good); border-color: color-mix(in srgb, var(--good) 35%, var(--border)); }
+.badge.bad{ color:var(--bad); border-color: color-mix(in srgb, var(--bad) 35%, var(--border)); } */
 
 /*  Responsiv  */
 @media (max-width: 420px){
