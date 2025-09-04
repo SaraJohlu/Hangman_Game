@@ -1,4 +1,168 @@
-:root {
-  
+/* Bas & färger (ljus tema) */
+:root{
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: rgba(0,0,0,.12);
+  --shadow: 0 10px 28px rgba(0,0,0,.12);
+  --primary: #2563eb;   /* blå */
+  --good: #16a34a;      /* grön */
+  --bad: #dc2626;       /* röd */
+}
+
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 700px at 75% -10%, #e9eefb 0, transparent 60%),
+    radial-gradient(1000px 600px at -20% 10%, #eaf7ef 0, transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font: 15.5px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Layout & kort */
+.container{
+  max-width: 560px;
+  margin: 88px auto;
+  padding: 0 20px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 9px;
+  font-size: 36px; 
+  text-align: center;
+}
+/* Hangman/Info-ruta */
+pre{
+   margin: 10px 0 12px;
+  padding: 56px;     /* lite mer padding så det ser balanserat ut */
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  border: 1px dashed var(--border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 30px;   /* var 12.5px → större gubbe */
+  line-height: 1.0;  /* lite mer luft mellan raderna */
+  white-space: pre;
+  overflow: auto;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Ordet & meta */
+.word{
+  font-size: 25px;
+  letter-spacing: .1rem;
+  margin: 4px 0 10px;
+  word-wrap:anywhere;
+  text-align: center;
+  display: block;
+}
+.meta{
+  color:var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* Kontroller */
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+input[type="text"], input[type="search"], input[type="number"], input#letter{
+  height: 38px;
+  min-width: 120px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  outline: none;
+}
+
+button{
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+  cursor:pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+}
+button:active{
+  transform: translateY(0);
+  box-shadow: 0 1px 6px rgba(0,0,0,.10);
+}
+button:disabled{
+  opacity:.6; cursor:not-allowed;
+}
+
+/* Primär stil (kan sättas manuellt via class="primary" om du vill) */
+button.primary{
+  border-color: color-mix(in srgb, var(--primary) 40%, black 0%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 18%, white 82%), #fff);
+}
+
+/* Fokus (tangentbordstillgänglighet) */
+button:focus-visible, input#letter:focus-visible{
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Hjälpfärger (om du vill markera status) */
+.badge{
+  display:inline-block;
+  padding:2px 8px;
+  font-size:12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+.badge.good{ color:var(--good); border-color: color-mix(in srgb, var(--good) 35%, var(--border)); }
+.badge.bad{ color:var(--bad); border-color: color-mix(in srgb, var(--bad) 35%, var(--border)); }
+
+/*  Responsiv  */
+@media (max-width: 420px){
+  .container{ max-width: 94vw; }
+  h1{ font-size: 28px; }
+  .word{ font-size: 20px; }
+  pre{ font-size: 16px; }
+}
+@keyframes winnerFlash {
+  0%   { background: #fff; }
+  25%  { background: #d1fae5; } /* ljusgrön */
+  50%  { background: #04fb29; } /* guld */
+  75%  { background: #d1fae5; }
+  100% { background: #fff; }
+}
+
+.card.won {
+  animation: winnerFlash 1s ease-in-out 3; /* blinkar 3 gånger */
+  border-color: var(--good);
+  box-shadow: 0 0 20px rgba(6, 175, 31, 0.804);
 }
 
