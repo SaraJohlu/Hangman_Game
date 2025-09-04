@@ -15,7 +15,8 @@ With <b>ENUM</b> we can put those states like this.
 
 With this we can change the different game states to our functions we will build. 
 Like for exampel, gameState.Playing, gameState.Won, gameState.Lost. 
-  <i>How these will look inside of function will be displayed further down on thi page.</i> 
+
+<i>How these will look inside of function will be displayed further down on thi page.</i> 
 
 Lets continue to the <b>Literal Types</b>.
 In our case as we build a hangman game, we can with types decide which letters that will be "right" to use.
