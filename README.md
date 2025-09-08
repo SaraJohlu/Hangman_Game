@@ -45,6 +45,17 @@ exampel for this on our code is:
   | "v" | "w" | "x" | "y" | "z";`   
 
   - Side note: Why not Å Ä Ö?
+
+
+    ### Övningsuppgift
+
+Visa antal gissningar: Lägg till en räknare som visar hur många bokstäver spelaren har gissat totalt (rätt + fel).
+
+###Ledtrådar:
+
+Spara gissade bokstäver i en lista, t.ex. guessedLetters.
+Använd guessedLetters.length för att räkna.
+Uppdatera ett element i DOM:en med textContent när spelaren gissar
     
 
 
