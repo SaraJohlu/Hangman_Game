@@ -56,6 +56,8 @@ Visa antal gissningar: Lägg till en räknare som visar hur många bokstäver sp
 Spara gissade bokstäver i en lista, t.ex. guessedLetters.
 Använd guessedLetters.length för att räkna.
 Uppdatera ett element i DOM:en med textContent när spelaren gissar
+
+## Feedback från grupp 8:
     
 
 
