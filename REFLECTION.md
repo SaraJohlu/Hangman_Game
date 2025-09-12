@@ -9,4 +9,14 @@ Dock tycker jag det blir mäktigt att att skriva om koden på ett mer pedagogisk
   Det ger en inblick i hur andra lägger upp sin kod och man kan ta del av det på ett sätt som ger kunskap ifall man själv någon gång kommer att göra ett
   liknande projekt. 
   
-- Feedback från grupp 9
+## Feedback från grupp 9
+Bra och väldigt tydlig feedback från grupp 9. 
+Uppgiften var rolig och de tyckte att idéen var kul. 
+Kommentarer som lämnades var: 
+- Guess knappen är överflödig då programmet i sig gissar bokstaven utan att
+man använder sig av knappen. 
+- En mindre input var små justeringar kring funktioner (speciellt kring inputfält)
+
+
+- README var ganska lätt, det var inga problem med övningsuppgiften. De önskade en kort 
+introduktion till hur man använder sig av programmet vilket vi har lagt till i efterhand. 
