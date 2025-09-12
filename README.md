@@ -1,42 +1,41 @@
 # Group 8 - Group assignment for our TypeScript course.
-Developers: Gentiana and Sara.   
+Developers: Gentiana and Sara.
+KYHA_FE2024
 
 
+## The game: Hangman -> Tutorial av koden. 
+#### Med Enums och Literal Types
 
+### Vi börjar med att:   
+1: Använd dig av den kod edititor som du jobbar i (i vårat fall är det VS-code).   
+2. I terminalen skriver du npm create vite@latest . .
+  Välj ett namn som passar bra för projektet, välj React och TypeScript i listan av förslag.   
+3. Nu är det dags att börja koda.   
 
-## The game: Hangman -> Tutorial of the code. 
-#### With Enums and Literal Types
-
-### First of all, lets start up the project.   
-1: Use your code editor (our case, VS code).   
-2. Create a new project with npm create vite@latest .
-   Chose a sutble name, chose Vanilla and then TypeScript in the list. Clean up the files after your own liking.   
-3. And now to the fun part, Codeing. Lets decide state for the game, as a player its nice to know in this case 3 important things, Playing, Won or Lost. 
-With <b>ENUM</b> we can put those states like this. 
-
+Först bestämmer vi ett game state med enums. Så här kan koden kan se ut.   
 `enum gameState {
 Playing = "PLAYING",
 Won = "WON",
 Lost = "LOST" }`
 
-- Side note: Writing this will put the states not as playing, won or lost. It will render out 0,1 and 2 depending on what the outcome is.
-   
-`enum gameState {
+- Att tänka på: Att skriva som ovan beskrivet kommer att retunera värdet av ditt state i spelet till antingen Playing, Won eller Lost.
+  hade vi däremot skrivit som denna kodrad beskriver  
+   `enum gameState {
   Playing,
   Won,
   Lost, 
 };`
-<b>Example</b>: Status: 0 instead of Status: Playing. Can lead too confusion.
+så hade programmet retunerat 0,1 och 2. Vilket i sin tur inte hade gett mycket av förklaring till den som spelar.
+Detta kan säkert vara ett av första problemen man kan stöta på när man använder sig av enums. 
 
-With this we can change the different game states to our functions we will build. 
-Like for exampel:  
-gameState.Playing, gameState.Won, gameState.Lost.   
-<i>How these will look inside of a function will be displayed further down on this page.</i> 
+Så med enums kan vi alltså ändra vårat game state beroende på vad våra funktioner gör. Det kan isåfall se ut så här   
+gameState.Playing, gameState.Won gameState.Lost.
 
-### Lets continue to the <b>Literal Types</b>.
-In our case as we build a hangman game, we can with types decide which letters will be the "right" ones to use.
+<i>Hur Dessa ser ut i en funktion kommer vi visa längre ner.</i> 
 
-exampel for this on our code is:
+### Vi fortsätter till <b>Literal Types</b>.
+Som i vårat fall, som bygger ett hängagubbe spel så vill vi ge spelaren/spelarna rätta bokstäver att använda sig av. 
+Exempel på det kan se ut så här:
 
 `type Letter =
   | "a" | "b" | "c" | "d" | "e" | "f" | "g"
@@ -44,20 +43,40 @@ exampel for this on our code is:
   | "o" | "p" | "q" | "r" | "s" | "t" | "u"  
   | "v" | "w" | "x" | "y" | "z";`   
 
-  - Side note: Why not Å Ä Ö?
+  - Att tänka på: att använda ÅÄÖ eller till exempel 1 kan leda till encodingproblem, speciellt om man arbetar med äldre versioner av UTF-8
+    Samtidigt så är det inte optimalt för internationella sammarbeten kring projekt. Att undvika det ger också en bättre portabilitet
+    då APIer, JSON-parses, och databaser kan läsa av tecknena fel.
+
+Med TS är det bra att ha interface, våran ser ut så här   
+
+`interface hangman_game {
+  word: String,
+  guessed_letters: Letter[],
+  max_fails: number,
+  state: gameState
+};`
+
+Detta säger åt TS hur vårat program ska fungera och vad som är vad. Gör det enkelt att skicka in props i funktioner.  
+
+Nu har vi skapat grunden får vårat program. Dags att gå vidare till att skapa funktioner och gränssnittet. 
+
+## Start Game
+
+- HANGMAN_STEPS, är de olika stegen som kopplas ihop med spelarens gissade bokstav. Beroende på om gissningen är rätt eller inte, vid fel svar implementeras stegen en för en i funktionen start_hangman. Här skickar vi in att ordet är av typen string som parameter, gissade antal bokstävers array är tom. Vi ser till att oavsett stor eller liten bokstav så är gissade ordet OK med metoden toLowerCase. Sedan sätter vi vårat gamestate till playing och vårat första steg av HANGMAN_STEPS.
+
+- 
 
 
     ### Övningsuppgift
 
 Visa antal gissningar: Lägg till en räknare som visar hur många bokstäver spelaren har gissat totalt (rätt + fel).
 
-###Ledtrådar:
+<b>Ledtrådar:</b>
 
 Spara gissade bokstäver i en lista, t.ex. guessedLetters.
 Använd guessedLetters.length för att räkna.
 Uppdatera ett element i DOM:en med textContent när spelaren gissar
 
-## Feedback från grupp 8:
     
 
 
