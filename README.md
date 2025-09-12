@@ -3,12 +3,20 @@ Developers: Gentiana and Sara.
 KYHA_FE2024
 
 
-## The game: Hangman -> Tutorial av koden. 
+## The game: Hangman 
 #### Med Enums och Literal Types
+Välkommen! 
+har du inte redan gjort så ladda ner vårat repo som Zip fil och extrahera över till en egen mapp.   
+När du väl har sparat ner applikationen, öppna upp det i din kod editor och starta spelet.   
 
+- Gå till terminalen och skriv npm run dev, detta kommer starta upp en live server på en localhost.   
+Klicka på den länk du får upp i terminalen och den ska leda dig vidare till din webbläsare.   
+Tada, du kan nu spela Hangman. Lycka till!
+
+# Så här byggde vi vår applikation -> Tutorial av koden. 
 ### Vi börjar med att:   
 1: Använd dig av den kod edititor som du jobbar i (i vårat fall är det VS-code).   
-2. I terminalen skriver du npm create vite@latest . .
+2. Se först till att du är placerad i projektets mapp. I terminalen skriver du npm create vite@latest . .
   Välj ett namn som passar bra för projektet, välj React och TypeScript i listan av förslag.   
 3. Nu är det dags att börja koda.   
 
