@@ -7,10 +7,11 @@ Dock tycker jag det blir mäktigt att att skriva om koden på ett mer pedagogisk
 
 - Det var en rolig och givande idea att testa en annan grupps uppgift/projekt och sedan själv få lägga till övningsuppgiften. Lite skrämmande men ändå kul.
   Det ger en inblick i hur andra lägger upp sin kod och man kan ta del av det på ett sätt som ger kunskap ifall man själv någon gång kommer att göra ett
-  liknande projekt. 
-
+  liknande projekt.
+   
   ### Gentianas reflektion:
-  -Det var både lärorikt och utmanande att arbeta med Hänga gubbens spel, utöver att i början var det lite klurigt att förstå hur koden var uppbyggd, speciellt när jag behöve hantera DOM-element och TypeScrpt-typer. Samtidigt gav det mig en bättre förståelse för hur man kan strukturera spelets logik i mindre delar, och jag fick öva på att tänka mer metodiskt.
+  
+  - Det var både lärorikt och utmanande att arbeta med Hänga gubbens spel, utöver att i början var det lite klurigt att förstå hur koden var uppbyggd, speciellt när jag behöve hantera DOM-element och TypeScrpt-typer. Samtidigt gav det mig en bättre förståelse för hur man kan strukturera spelets logik i mindre delar, och jag fick öva på att tänka mer metodiskt.
 
 - Det roligaste var att se spelet växa fram och att själv kunna lägga till funktioner som gör upplevelsen mer komplett, som att rita gubben steg för steg. Jag insåg också hur viktigt det är att skriva koden på ett tydligt och pedagogiskt sätt – det underlättar både för mig själv och för andra som ska läsa den.
 
@@ -26,4 +27,5 @@ man använder sig av knappen.
 
 - README var ganska lätt, det var inga problem med övningsuppgiften. De önskade en kort 
 introduktion till hur man använder sig av programmet vilket vi har lagt till i efterhand. 
+
 
